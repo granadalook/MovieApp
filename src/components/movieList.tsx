@@ -12,6 +12,7 @@ export default function movieList(props: {
   const renderItem = ({item}: any) => <MovieCard movieCard={item} />;
   const loadMore = () => {
     loadMovies();
+    console.log('llamo');
   };
 
   return (
@@ -23,7 +24,7 @@ export default function movieList(props: {
       keyExtractor={item => String(item.id)}
       contentContainerStyle={stylesMovieList.flatListContentContainer}
       onEndReached={loadMore}
-      onEndReachedThreshold={0.2}
+      onEndReachedThreshold={1}
       ListFooterComponent={
         <ActivityIndicator size="large" style={stylesMovieList.spiner} />
       }
