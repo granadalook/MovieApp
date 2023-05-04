@@ -18,7 +18,7 @@ export default function movieList(props: any) {
       keyExtractor={item => String(item.id)}
       contentContainerStyle={styles.flatListContentContainer}
       onEndReached={loadMore}
-      onEndReachedThreshold={0.1}
+      onEndReachedThreshold={0.2}
       ListFooterComponent={
         <ActivityIndicator size="large" style={styles.spiner} />
       }

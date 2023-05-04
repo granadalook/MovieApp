@@ -3,9 +3,10 @@ import axios from 'axios';
 import {Data} from '../interface/Data';
 import {Detail} from '../interface/MovieDetail';
 export async function getALLPopularMovies(page: number) {
+  console.log('page', page);
   try {
     const response = await axios.get<Data>(
-      `${environment.URL_BASE}${environment.POPULAR}?${
+      `${environment.URL_BASE}${environment.POPULAR_MOVIES}?${
         environment.API_KEY
       }&language=en-US&page=${page.toString()}`,
     );

@@ -4,7 +4,6 @@ import React from 'react';
 import {environment} from '../../environments/environments';
 
 export default function header(props: any) {
-
   const {title, imagebg, lenguage} = props;
   return (
     <>
@@ -15,7 +14,7 @@ export default function header(props: any) {
         </View>
         <View style={styles.contenImg}>
           <Image
-            source={{uri: `${environment.IMAGE}${imagebg}`}}
+            source={{uri: `${environment.URL_IMAGE_BASE}${imagebg}`}}
             style={styles.Image}
           />
         </View>
