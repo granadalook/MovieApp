@@ -1,9 +1,10 @@
-import {View, Text, Image, TouchableWithoutFeedback} from 'react-native';
 import React from 'react';
+import {CardI} from '../interface/cardI';
 import {useNavigation} from '@react-navigation/native';
 import {styleMovieCard} from '../theme/movieCardTheme';
+import {View, Text, Image, TouchableWithoutFeedback} from 'react-native';
 
-export default function MovieCard(props: any) {
+export default function MovieCard(props: {movieCard: CardI}) {
   const {movieCard} = props;
   const navigation = useNavigation();
 

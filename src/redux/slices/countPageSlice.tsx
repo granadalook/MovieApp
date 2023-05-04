@@ -1,10 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {InitialStateI} from '../../interface/initalState';
 
-interface initialStateI {
-  value: number;
-}
-
-const initialState: initialStateI = {
+const initialState: InitialStateI = {
   value: 1,
 };
 

@@ -1,7 +1,7 @@
-import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import MoviesScreen from '../screens/Movies';
 import detail from '../screens/detail';
+import MoviesScreen from '../screens/Movies';
+import {createStackNavigator} from '@react-navigation/stack';
 const Stack = createStackNavigator();
 export default function MoviesNavigation() {
   return (

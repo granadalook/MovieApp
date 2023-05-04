@@ -1,8 +1,8 @@
-import {Text, View, Image} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import React from 'react';
 import {styleHome} from '../theme/homeTheme';
+import {Text, View, Image} from 'react-native';
 import {environment} from '../environments/environments';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 export default function Home() {
   return (

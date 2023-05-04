@@ -1,8 +1,8 @@
 import React from 'react';
 import {Image} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import MoviesNavigation from './MoviesNavigation';
 import HomeNavigation from './HomeNavigation';
+import MoviesNavigation from './MoviesNavigation';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
 export default function NavigationFuntion() {

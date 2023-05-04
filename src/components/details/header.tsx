@@ -1,10 +1,11 @@
-import {View, Text, Image} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import React from 'react';
-import {environment} from '../../environments/environments';
+import {View, Text, Image} from 'react-native';
+import {HeaderI} from '../../interface/headerI';
 import {stylesHeader} from '../../theme/headerTheme';
+import {environment} from '../../environments/environments';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
-export default function header(props: any) {
+export default function header(props: HeaderI) {
   const {title, imagebg, lenguage} = props;
   return (
     <>

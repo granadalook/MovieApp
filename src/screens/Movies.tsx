@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {getALLPopularMovies, getMovieDetailById} from '../api/moviesApi';
+/* eslint-disable react-hooks/exhaustive-deps */
 import {Result} from '../interface/Result';
 import MovieList from '../components/movieList';
+import React, {useState, useEffect} from 'react';
 import {environment} from '../environments/environments';
-import {useAppDispatch, useAppSelector} from '../redux/hooks/hooks';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {increment, reset} from '../redux/slices/countPageSlice';
+import {useAppDispatch, useAppSelector} from '../redux/hooks/hooks';
+import {getALLPopularMovies, getMovieDetailById} from '../api/moviesApi';
 export default function Movies() {
   const counter = useAppSelector(state => state.counter.value);
   const dispatch = useAppDispatch();
@@ -21,14 +22,16 @@ export default function Movies() {
     try {
       const response = await getALLPopularMovies(counter);
       const moviesList: React.SetStateAction<any[]> = [];
-      for await (const movie of response.data) {
+      for await (const movie of response!.data) {
         const movieDetail = await getMovieDetailById(movie.id.toString());
         moviesList.push({
-          title: movieDetail.data.title,
-          id: movieDetail.data.id,
-          homepage: movieDetail.data.homepage,
-          overview: movieDetail.data.overview,
-          poster_path: `${environment.URL_IMAGE_BASE}${movieDetail.data.poster_path}`,
+          title: movieDetail!.data.title,
+          id: movieDetail!.data.id,
+          homepage: movieDetail!.data.homepage,
+          overview: movieDetail!.data.overview,
+          poster_path: `${environment.URL_IMAGE_BASE}${
+            movieDetail!.data.poster_path
+          }`,
         });
       }
 

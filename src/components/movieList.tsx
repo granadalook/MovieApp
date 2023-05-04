@@ -1,11 +1,15 @@
-import {FlatList, ActivityIndicator} from 'react-native';
 import React from 'react';
 import MovieCard from './MovieCard';
+import {Result} from '../interface/Result';
 import {stylesMovieList} from '../theme/movieListTheme';
+import {FlatList, ActivityIndicator} from 'react-native';
 
-export default function movieList(props: any) {
+export default function movieList(props: {
+  movies: Result[];
+  loadMovies: () => void;
+}) {
   const {movies, loadMovies} = props;
-  const renderItem = ({item}) => <MovieCard movieCard={item} />;
+  const renderItem = ({item}: any) => <MovieCard movieCard={item} />;
   const loadMore = () => {
     loadMovies();
   };

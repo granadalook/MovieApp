@@ -1,26 +1,27 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {ScrollView} from 'react-native';
-import React, {useEffect, useState} from 'react';
-import {getMovieDetailById} from '../api/moviesApi';
-import Headers from '../components/details/header';
-import Description from '../components/details/description';
 import {Detail} from '../interface/MovieDetail';
+import React, {useEffect, useState} from 'react';
+import Headers from '../components/details/header';
+import {getMovieDetailById} from '../api/moviesApi';
+import Description from '../components/details/description';
 
 export default function detail(props: any) {
   const {
     route: {params},
     navigation,
   } = props;
-  const [details, setDetail] = useState<Detail>(null);
+  const [details, setDetail] = useState<Detail>();
   useEffect(() => {
     (async () => {
       try {
         const response = await getMovieDetailById(params.id);
-        setDetail(response.data);
+        setDetail(response!.data);
       } catch (error) {
         navigation.goBack();
       }
     })();
-  }, [params]);
+  }, [navigation, params]);
   if (!details) {
     return null;
   }
