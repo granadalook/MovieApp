@@ -4,7 +4,6 @@ import MovieCard from './MovieCard';
 
 export default function movieList(props: any) {
   const {movies, loadMovies} = props;
-  console.log('pla', Platform.OS);
   const renderItem = ({item}) => <MovieCard movieCard={item} />;
   const loadMore = () => {
     loadMovies();

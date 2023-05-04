@@ -4,7 +4,6 @@ import React from 'react';
 import {environment} from '../../environments/environments';
 
 export default function header(props: any) {
-  console.log('props', props);
 
   const {title, imagebg, lenguage} = props;
   return (

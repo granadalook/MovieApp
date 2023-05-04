@@ -7,8 +7,8 @@ export default function description(props: any) {
     <View style={styles.content}>
       <Text style={styles.date}>Release date : {date}</Text>
       <Text style={styles.date}>Duration : {time} Minutes</Text>
-      <Text style={styles.tagline}>Slogan: {tagline}</Text>
-      <Text style={styles.overview}>Synopsis: {overview}</Text>
+      <Text style={styles.tagline}>Slogan : {tagline}</Text>
+      <Text style={styles.overview}>Synopsis : {overview}</Text>
     </View>
   );
 }
