@@ -1,6 +1,7 @@
-import {FlatList, StyleSheet, ActivityIndicator, Platform} from 'react-native';
+import {FlatList, ActivityIndicator} from 'react-native';
 import React from 'react';
 import MovieCard from './MovieCard';
+import {stylesMovieList} from '../theme/movieListTheme';
 
 export default function movieList(props: any) {
   const {movies, loadMovies} = props;
@@ -16,19 +17,12 @@ export default function movieList(props: any) {
       showsVerticalScrollIndicator={false}
       renderItem={renderItem}
       keyExtractor={item => String(item.id)}
-      contentContainerStyle={styles.flatListContentContainer}
+      contentContainerStyle={stylesMovieList.flatListContentContainer}
       onEndReached={loadMore}
       onEndReachedThreshold={0.2}
       ListFooterComponent={
-        <ActivityIndicator size="large" style={styles.spiner} />
+        <ActivityIndicator size="large" style={stylesMovieList.spiner} />
       }
     />
   );
 }
-
-const styles = StyleSheet.create({
-  flatListContentContainer: {
-    paddingHorizontal: Platform.OS === 'android' ? 15 : 30,
-  },
-  spiner: {marginTop: 20, marginBottom: 60},
-});

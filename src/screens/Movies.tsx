@@ -8,7 +8,6 @@ import {useAppDispatch, useAppSelector} from '../redux/hooks/hooks';
 import {increment, reset} from '../redux/slices/countPageSlice';
 export default function Movies() {
   const counter = useAppSelector(state => state.counter.value);
-
   const dispatch = useAppDispatch();
   const [movies, setMovies] = useState<Array<Result>>([]);
   const [page, setPage] = useState(1);
